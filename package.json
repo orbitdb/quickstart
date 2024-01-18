@@ -1,21 +1,49 @@
 {
-  "name": "repo-template",
-  "private": true,
+  "name": "@orbitdb/quickstart",
   "version": "1.0.0",
-  "description": "A template for creating new repositories in the @orbitdb organization",
-  "main": "index.js",
+  "description": "A preconfigured instance which allows developers to \"test drive\" OrbitDB.",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env mocha --config test/.mocharc.json",
+    "test:ci": "cross-env c8 mocha --config test/.mocharc.json",
+    "test:browser": "npm run build:tests && ./node_modules/.bin/playwright-test test/browser/bundle.js --runner mocha",
+    "build": "npm run build:dist && npm run build:debug",
+    "build:dist": "webpack --config conf/webpack.config.js",
+    "build:debug": "webpack --config conf/webpack.debug.config.js",
+    "build:tests": "rm -f test/browser/bundle.js* && webpack --config ./conf/webpack.tests.config.js",
+    "prepublishOnly": "npm run build",
+    "lint": "standard --env=mocha",
+    "lint:fix": "standard --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RichardLitt/repo-template.git"
+    "url": "git+https://github.com/orbitdb/quickstart.git"
   },
-  "keywords": ["orbitdb", "orbit", "template", "docs"],
-  "author": "Richard Littauer <richard.littauer@gmail.com> (https://burntfen.com)",
+  "keywords": [
+    "orbitdb",
+    "quickstart",
+    "helia",
+    "libp2p"
+  ],
+  "author": "OrbitDB",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RichardLitt/repo-template/issues"
+    "url": "https://github.com/orbitdb/quickstart/issues"
   },
-  "homepage": "https://github.com/RichardLitt/repo-template#readme"
+  "homepage": "https://github.com/orbitdb/quickstart#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "mocha": "^10.2.0",
+    "path-browserify": "^1.0.1",
+    "playwright-test": "^14.0.0",
+    "rimraf": "^5.0.5",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@orbitdb/core": "github:orbitdb/orbitdb#helia",
+    "blockstore-level": "^1.1.7",
+    "helia": "^3.0.1"
+  }
 }
