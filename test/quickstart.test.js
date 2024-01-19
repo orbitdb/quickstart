@@ -81,7 +81,7 @@ describe('Multiple nodes', function () {
     await rimraf('./orbitdb2')
   })
 
-  it.only('replicates a database between four OrbitDB instances', async () => {
+  it('replicates a database between four OrbitDB instances', async () => {
     let replicated1 = false
     let replicated2 = false
 

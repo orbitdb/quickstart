@@ -1,6 +1,6 @@
 {
   "name": "@orbitdb/quickstart",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A preconfigured instance which allows developers to \"test drive\" OrbitDB.",
   "main": "src/index.js",
   "type": "module",
@@ -53,7 +53,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@orbitdb/core": "github:orbitdb/orbitdb#helia",
+    "@orbitdb/core": "^2.0.1",
     "blockstore-level": "^1.1.7",
     "helia": "^3.0.1"
   }
