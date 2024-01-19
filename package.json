@@ -14,7 +14,9 @@
     "build:tests": "rm -f test/browser/bundle.js* && webpack --config ./conf/webpack.tests.config.js",
     "prepublishOnly": "npm run build",
     "lint": "standard --env=mocha",
-    "lint:fix": "standard --fix"
+    "lint:fix": "standard --fix",
+    "webrtc": "node ./test/utils/relay.js",
+    "webrtc:background": "node ./test/utils/relay.js &"
   },
   "repository": {
     "type": "git",
@@ -39,7 +41,7 @@
     "ignore": [
       "test/browser/**"
     ]
-  },  
+  },
   "devDependencies": {
     "cross-env": "^7.0.3",
     "mocha": "^10.2.0",
