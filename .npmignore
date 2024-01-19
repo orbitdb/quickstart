@@ -8,12 +8,10 @@ node_modules/
 dist/*.map
 
 # Don't distribute the debug build
-dist/orbitdb.js
+dist/orbitdb-quickstart.js
 
 .git
-benchmarks
 test
 conf
-Makefile
 CONTRIBUTING.md
 CODE_OF_CONDUCT.md
