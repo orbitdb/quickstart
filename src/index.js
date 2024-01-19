@@ -37,9 +37,9 @@ const stopOrbitDB = async (instance) => {
   await instance.ipfs.stop()
 }
 
-export { 
-  startOrbitDB, 
-  stopOrbitDB, 
-  DefaultLibp2pOptions, 
+export {
+  startOrbitDB,
+  stopOrbitDB,
+  DefaultLibp2pOptions,
   DefaultLibp2pBrowserOptions
 }

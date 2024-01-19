@@ -9,7 +9,7 @@ describe('Starting OrbitDB', function () {
     await db1.add('hello world!')
 
     deepStrictEqual((await db1.all()).map(e => e.value), ['hello world!'])
-    
+
     await stopOrbitDB(orbitdb)
     await rimraf('./orbitdb')
     await rimraf('./ipfs')

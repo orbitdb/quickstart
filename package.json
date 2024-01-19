@@ -32,12 +32,21 @@
     "url": "https://github.com/orbitdb/quickstart/issues"
   },
   "homepage": "https://github.com/orbitdb/quickstart#readme",
+  "standard": {
+    "env": [
+      "mocha"
+    ],
+    "ignore": [
+      "test/browser/**"
+    ]
+  },  
   "devDependencies": {
     "cross-env": "^7.0.3",
     "mocha": "^10.2.0",
     "path-browserify": "^1.0.1",
     "playwright-test": "^14.0.0",
     "rimraf": "^5.0.5",
+    "standard": "^17.1.0",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
