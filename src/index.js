@@ -24,22 +24,25 @@ const startOrbitDB = async ({ id, identity, identities, directory } = {}) => {
   directory = directory || '.'
   const blockstore = new LevelBlockstore(`${directory}/ipfs/blocks`)
   const ipfs = await createHelia({ libp2p, blockstore, blockBrokers: [bitswap()] })
-  return createOrbitDB({ ipfs, id, identity, identities, directory })
+  const orbitdb = await createOrbitDB({ ipfs, id, identity, identities, directory })
+  return orbitdb
 }
 
 /**
  * Stops the OrbitDB peer and associated services.
  * @function stopOrbitDB
- * @param {Object} instance The instance of OrbitDB to stop.
+ * @param {Object} orbitdb The OrbitDB instance to stop.
  */
-const stopOrbitDB = async (instance) => {
-  await instance.stop()
-  await instance.ipfs.stop()
+const stopOrbitDB = async (orbitdb) => {
+  await orbitdb.stop()
+  await orbitdb.ipfs.stop()
+  await orbitdb.ipfs.blockstore.unwrap().unwrap().close()
 }
 
 export {
   startOrbitDB,
   stopOrbitDB,
   DefaultLibp2pOptions,
-  DefaultLibp2pBrowserOptions
+  DefaultLibp2pBrowserOptions,
+  isBrowser
 }
