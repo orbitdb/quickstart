@@ -1,6 +1,6 @@
 {
   "name": "@orbitdb/quickstart",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A preconfigured instance which allows developers to \"test drive\" OrbitDB.",
   "main": "src/index.js",
   "type": "module",
