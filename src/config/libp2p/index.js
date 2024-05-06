@@ -57,6 +57,6 @@ export const DefaultLibp2pBrowserOptions = {
   },
   services: {
     identify: identify(),
-    pubsub: gossipsub({ allowPublishToZeroPeers: true })
+    pubsub: gossipsub({ allowPublishToZeroTopicPeers: true })
   }
 }
