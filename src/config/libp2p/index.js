@@ -30,7 +30,7 @@ export const DefaultLibp2pOptions = {
   },
   services: {
     identify: identify(),
-    pubsub: gossipsub({ allowPublishToZeroPeers: true })
+    pubsub: gossipsub({ allowPublishToZeroTopicPeers: true })
   }
 }
 
