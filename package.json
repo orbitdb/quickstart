@@ -53,8 +53,9 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@orbitdb/core": "^2.0.1",
-    "blockstore-level": "^1.1.7",
-    "helia": "^3.0.1"
+    "@chainsafe/libp2p-gossipsub": "^13.0.0",
+    "@orbitdb/core": "^2.2.0",
+    "blockstore-level": "^1.1.8",
+    "helia": "^4.2.1"
   }
 }
