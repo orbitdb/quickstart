@@ -33,6 +33,8 @@ OrbitDB Quickstart also includes default Libp2p configurations for Node.js and b
 ```js
 import { createOrbitDB } from '@orbitdb/core'
 import { DefaultLibp2pOptions } from '@orbitdb/quickstart'
+import { createLibp2p } from "libp2p";
+import { createHelia } from "helia";
 
 const libp2p = createLibp2p({ ...DefaultLibp2pOptions })
 const ipfs = await createHelia({ libp2p })
