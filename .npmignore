@@ -8,7 +8,7 @@ node_modules/
 dist/*.map
 
 # Don't distribute the debug build
-dist/orbitdb-quickstart.js
+dist/orbitdb-liftoff.js
 
 .git
 test

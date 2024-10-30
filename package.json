@@ -1,6 +1,6 @@
 {
-  "name": "@orbitdb/quickstart",
-  "version": "1.0.0",
+  "name": "@orbitdb/liftoff",
+  "version": "1.1.0",
   "description": "A preconfigured instance which allows developers to \"test drive\" OrbitDB.",
   "main": "src/index.js",
   "type": "module",
@@ -20,20 +20,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/orbitdb/quickstart.git"
+    "url": "git+https://github.com/orbitdb/liftoff.git"
   },
   "keywords": [
     "orbitdb",
     "quickstart",
     "helia",
-    "libp2p"
+    "libp2p",
+    "liftoff"
   ],
   "author": "OrbitDB",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/orbitdb/quickstart/issues"
+    "url": "https://github.com/orbitdb/liftoff/issues"
   },
-  "homepage": "https://github.com/orbitdb/quickstart#readme",
+  "homepage": "https://github.com/orbitdb/liftoff#readme",
   "standard": {
     "env": [
       "mocha"
@@ -53,9 +54,9 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@chainsafe/libp2p-gossipsub": "^13.0.0",
-    "@orbitdb/core": "^2.2.0",
-    "blockstore-level": "^1.1.8",
-    "helia": "^4.2.1"
+    "@chainsafe/libp2p-gossipsub": "^14.1.0",
+    "@orbitdb/core": "^2.4.1",
+    "blockstore-level": "^2.0.1",
+    "helia": "^5.1.0"
   }
 }
