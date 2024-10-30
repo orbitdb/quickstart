@@ -9,7 +9,7 @@ export default (env, argv) => {
     mode: 'development',
     entry: './src/index.js',
     output: {
-      filename: '../dist/orbitdb-quickstart.js',
+      filename: '../dist/orbitdb-liftoff.js',
       library: {
         name: 'OrbitDB',
         type: 'var'

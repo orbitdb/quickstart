@@ -17,13 +17,9 @@ export const DefaultLibp2pOptions = {
   transports: [
     webSockets({
       filter: all
-    }),
-    webRTC(),
-    circuitRelayTransport({
-      discoverRelays: 1
     })
   ],
-  connectionEncryption: [noise()],
+  connectionEncrypters: [noise()],
   streamMuxers: [yamux()],
   connectionGater: {
     denyDialMultiaddr: () => false
@@ -39,18 +35,16 @@ export const DefaultLibp2pOptions = {
  */
 export const DefaultLibp2pBrowserOptions = {
   addresses: {
-    listen: ['/webrtc']
+    listen: ['/webrtc', '/p2p-circuit']
   },
   transports: [
     webSockets({
       filter: all
     }),
     webRTC(),
-    circuitRelayTransport({
-      discoverRelays: 1
-    })
+    circuitRelayTransport()
   ],
-  connectionEncryption: [noise()],
+  connectionEncrypters: [noise()],
   streamMuxers: [yamux()],
   connectionGater: {
     denyDialMultiaddr: () => false
